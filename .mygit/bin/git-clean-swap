@@ -1,0 +1,2 @@
+find . -regex ".*swp" | xargs rm
+find . -regex ".*swo" | xargs rm
