@@ -1,8 +1,8 @@
 "NeoBundle
-if isdirectory(expand('~/.vim/bundle/'))
+if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
   if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim
-    call neobundle#begin(expand('~/.vim/bundle/'))
+    set runtimepath+=~/.dotfiles/.vim/bundle/neobundle.vim
+    call neobundle#begin(expand('~/.dotfiles/.vim/bundle/'))
     NeoBundleFetch 'Shougo/neobundle.vim'
     call neobundle#end()
   endif
