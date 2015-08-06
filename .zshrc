@@ -4,6 +4,7 @@
 
 # Adding the PATH for git 
 export PATH=$HOME/.dotfiles/.mygit/bin:$PATH
+alias tmux="TERM=screen-256color-bce tmux"
 
 ##############################
 # Oh-my-zsh settings
