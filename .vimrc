@@ -17,12 +17,32 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
   "NERDTree以外のバッファがなくなったときにNERDTreeを閉じる
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-  "標準入力時の動作をless風に
-  autocmd StdinReadPost * nnoremap q :q!<Enter>
-
   "lightline.vim
   NeoBundle 'itchyny/lightline.vim'
 endif
+
+"標準入力時の動作をless風に
+autocmd StdinReadPost * nnoremap q :q!<Enter>
+
+"コマンドラインモードでデフォルトでコマンドラインウィンドウを使うようにする
+nnoremap : q:
+nnoremap / q:/\v
+autocmd CmdwinEnter * call s:cmdwin_enter()
+autocmd CmdwinLeave * call s:cmdwin_leave()
+function! s:cmdwin_enter()
+  inoremap <C-C> <ESC>:q<ENTER>
+  nnoremap <C-C> :q<ENTER>
+  nnoremap : <nop>
+  normal j
+  startinsert
+endfunction
+function! s:cmdwin_leave()
+  inoremap <C-C> <C-C>
+  nnoremap <C-C> <C-C>
+  nnoremap : q:
+endfunction
+
+"q:でコマンドラインウィンドウを開かないようにする
 
 "デザイン
 set laststatus=2
@@ -81,7 +101,7 @@ set wildmenu
 set nocompatible
 
 "検索で正規表現
-nnoremap /  /\v
+"nnoremap /  /\v
 
 "バッファ文字数を数える関数
 function! s:GetBufByte()
