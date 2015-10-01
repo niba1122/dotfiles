@@ -51,6 +51,10 @@ noremap <Left> <nop>
 noremap <Right> <nop>
 noremap <Up> <nop>
 noremap <Down> <nop>
+noremap! <Left> <nop>
+noremap! <Right> <nop>
+noremap! <Up> <nop>
+noremap! <Down> <nop>
 
 "insertモードでのCtrl-Uを無効にする
 inoremap <C-U> <nop>
