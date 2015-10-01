@@ -7,8 +7,6 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
     call neobundle#end()
   endif
 
-"  "insert here your Neobundle plugins"
-
   "NERDTree
   NeoBundle 'scrooloose/nerdtree'
   autocmd vimenter * nested if @% == '' && s:GetBufByte() == 0 | NERDTree | endif
@@ -21,28 +19,47 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
   NeoBundle 'itchyny/lightline.vim'
 endif
 
-"標準入力時の動作をless風に
-autocmd StdinReadPost * nnoremap q :q!<Enter>
-
 "コマンドラインモードでデフォルトでコマンドラインウィンドウを使うようにする
 nnoremap : q:
 nnoremap / q:/\v
-autocmd CmdwinEnter * call s:cmdwin_enter()
-autocmd CmdwinLeave * call s:cmdwin_leave()
-function! s:cmdwin_enter()
-  inoremap <C-C> <ESC>:q<ENTER>
-  nnoremap <C-C> :q<ENTER>
-  nnoremap : <nop>
+nnoremap ? q:?\v
+autocmd CmdwinEnter * call s:init_cmdwin()
+function! s:init_cmdwin()
+  inoremap <buffer> <C-C> <ESC>:q<CR>
+  nnoremap <buffer> <C-C> :q<CR>
+  nnoremap <buffer> : <nop>
+  nnoremap <buffer> / /\v
+  nnoremap <buffer> ? ?\v
   normal j
   startinsert
 endfunction
-function! s:cmdwin_leave()
-  inoremap <C-C> <C-C>
-  nnoremap <C-C> <C-C>
-  nnoremap : q:
+
+"q:,q/,q?でコマンドラインウィンドウを開かないようにする(標準入力の場合を除く)
+autocmd vimenter * nested if @% != '' && s:GetBufByte() > 0 | call s:disable_cmdwin_from_q() | endif
+
+function! s:disable_cmdwin_from_q()
+  nnoremap q: <nop>
+  nnoremap q/ <nop>
+  nnoremap q? <nop>
 endfunction
 
-"q:でコマンドラインウィンドウを開かないようにする
+"標準入力時の動作をless風に
+autocmd StdinReadPost * nested nnoremap q :q!<Enter>
+
+"カーソル無効
+noremap <Left> <nop>
+noremap <Right> <nop>
+noremap <Up> <nop>
+noremap <Down> <nop>
+
+"insertモードでのCtrl-Uを無効にする
+inoremap <C-U> <nop>
+
+"閉じ括弧自動入力
+"inoremap [ []<Left>
+"inoremap ( ()<Left>
+"inoremap { {}<Left>
+"inoremap < <><Left>
 
 "デザイン
 set laststatus=2
@@ -98,10 +115,8 @@ set clipboard=autoselect,unnamed
 "コマンドラインモードでのタブキーでの補完
 set wildmenu
 
-set nocompatible
 
-"検索で正規表現
-"nnoremap /  /\v
+set nocompatible
 
 "バッファ文字数を数える関数
 function! s:GetBufByte()
