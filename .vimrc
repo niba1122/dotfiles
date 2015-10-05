@@ -21,15 +21,20 @@ endif
 
 "コマンドラインモードでデフォルトでコマンドラインウィンドウを使うようにする
 nnoremap : q:
-nnoremap / q:/\v
-nnoremap ? q:?\v
+nnoremap / q:/
+nnoremap ? q:?
+nnoremap <C-_> q:/\v
+nnoremap <C-?> q:?\v
+
 autocmd CmdwinEnter * call s:init_cmdwin()
 function! s:init_cmdwin()
   inoremap <buffer> <C-C> <ESC>:q<CR>
   nnoremap <buffer> <C-C> :q<CR>
   nnoremap <buffer> : <nop>
-  nnoremap <buffer> / /\v
-  nnoremap <buffer> ? ?\v
+  nnoremap <buffer> <C-_> /\v
+  nnoremap <buffer> <C-?> ?\v
+  nnoremap <buffer> / /
+  nnoremap <buffer> ? ?
   normal j
   startinsert
 endfunction
