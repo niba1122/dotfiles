@@ -25,6 +25,11 @@ nnoremap / q:/
 nnoremap ? q:?
 nnoremap <C-_> q:/\v
 nnoremap <C-?> q:?\v
+vnoremap : q:
+vnoremap / q:/
+vnoremap ? q:?
+vnoremap <C-_> q:/\v
+vnoremap <C-?> q:?\v
 
 autocmd CmdwinEnter * call s:init_cmdwin()
 function! s:init_cmdwin()
@@ -36,7 +41,7 @@ function! s:init_cmdwin()
   nnoremap <buffer> / /
   nnoremap <buffer> ? ?
   normal j
-  startinsert
+  startinsert!
 endfunction
 
 "q:,q/,q?でコマンドラインウィンドウを開かないようにする(標準入力の場合を除く)
@@ -46,6 +51,9 @@ function! s:disable_cmdwin_from_q()
   nnoremap q: <nop>
   nnoremap q/ <nop>
   nnoremap q? <nop>
+  vnoremap q: <nop>
+  vnoremap q/ <nop>
+  vnoremap q? <nop>
 endfunction
 
 "標準入力時の動作をless風に
