@@ -1,25 +1,42 @@
 "NeoBundle
 if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
   if has('vim_starting')
+    set nocompatible
     set runtimepath+=~/.dotfiles/.vim/bundle/neobundle.vim
     call neobundle#begin(expand('~/.dotfiles/.vim/bundle/'))
     NeoBundleFetch 'Shougo/neobundle.vim'
+
+    "NERDTree
+    NeoBundle 'scrooloose/nerdtree'
+    autocmd vimenter * nested if @% == '' && s:GetBufByte() == 0 | NERDTree | endif
+    nnoremap <C-n> :NERDTree<Enter>
+
+    "NERDTree以外のバッファがなくなったときにNERDTreeを閉じる
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+    "lightline.vim
+    NeoBundle 'itchyny/lightline.vim'
+
     call neobundle#end()
   endif
 
-  "NERDTree
-  NeoBundle 'scrooloose/nerdtree'
-  autocmd vimenter * nested if @% == '' && s:GetBufByte() == 0 | NERDTree | endif
-  nnoremap <C-n> :NERDTree<Enter>
-
-  "NERDTree以外のバッファがなくなったときにNERDTreeを閉じる
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-  "lightline.vim
-  NeoBundle 'itchyny/lightline.vim'
 endif
 
 "コマンドラインモードでデフォルトでコマンドラインウィンドウを使うようにする
+
+"autocmd bufenter * if (bufname(bufnr('%')) !~ "^NERD.*" ) | call s:commands_to_cmd_mode() | endif "NERDtree以外の場合のみ
+"function! s:commands_to_cmd_mode()
+"  nnoremap <buffer> : q:
+"  nnoremap <buffer> / q:/
+"  nnoremap <buffer> ? q:?
+"  nnoremap <buffer> <C-_> q:/\v
+"  nnoremap <buffer> <C-?> q:?\v
+"  vnoremap <buffer> : q:
+"  vnoremap <buffer> / q:/
+"  vnoremap <buffer> ? q:?
+"  vnoremap <buffer> <C-_> q:/\v
+"  vnoremap <buffer> <C-?> q:?\v
+"endfunction
 nnoremap : q:
 nnoremap / q:/
 nnoremap ? q:?
@@ -30,6 +47,7 @@ vnoremap / q:/
 vnoremap ? q:?
 vnoremap <C-_> q:/\v
 vnoremap <C-?> q:?\v
+
 
 autocmd CmdwinEnter * call s:init_cmdwin()
 function! s:init_cmdwin()
@@ -112,9 +130,6 @@ set number
 "バックスペースを有効に
 set backspace=start,eol,indent
 
-"カーソルが行をまたぐように"
-set whichwrap=<,>,[,]
-
 "シンタックスをオンに
 syntax on
 
@@ -131,9 +146,6 @@ set clipboard=autoselect,unnamed
 
 "コマンドラインモードでのタブキーでの補完
 set wildmenu
-
-
-set nocompatible
 
 "バッファ文字数を数える関数
 function! s:GetBufByte()
