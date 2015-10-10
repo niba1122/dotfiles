@@ -14,3 +14,6 @@ fi
 
 cd $HOME
 cd $DOTFILES_PATH
+
+git submodule init
+git submodule update
