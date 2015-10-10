@@ -98,6 +98,7 @@ NERDTreeAbout	NERD_tree.txt	/*NERDTreeAbout*
 NERDTreeAddKeyMap()	NERD_tree.txt	/*NERDTreeAddKeyMap()*
 NERDTreeAddMenuItem()	NERD_tree.txt	/*NERDTreeAddMenuItem()*
 NERDTreeAddMenuSeparator()	NERD_tree.txt	/*NERDTreeAddMenuSeparator()*
+NERDTreeAddPathFilter()	NERD_tree.txt	/*NERDTreeAddPathFilter()*
 NERDTreeAddSubmenu()	NERD_tree.txt	/*NERDTreeAddSubmenu()*
 NERDTreeBookmarkCommands	NERD_tree.txt	/*NERDTreeBookmarkCommands*
 NERDTreeBookmarkTable	NERD_tree.txt	/*NERDTreeBookmarkTable*
@@ -115,6 +116,7 @@ NERDTreeMenuAPI	NERD_tree.txt	/*NERDTreeMenuAPI*
 NERDTreeOptionDetails	NERD_tree.txt	/*NERDTreeOptionDetails*
 NERDTreeOptionSummary	NERD_tree.txt	/*NERDTreeOptionSummary*
 NERDTreeOptions	NERD_tree.txt	/*NERDTreeOptions*
+NERDTreePathListenerAPI	NERD_tree.txt	/*NERDTreePathListenerAPI*
 NERDTreeRender()	NERD_tree.txt	/*NERDTreeRender()*
 NERD_tree.txt	NERD_tree.txt	/*NERD_tree.txt*
 g:lightline	lightline.txt	/*g:lightline*
@@ -206,6 +208,7 @@ lightline-spirit	lightline.txt	/*lightline-spirit*
 lightline-troubleshooting	lightline.txt	/*lightline-troubleshooting*
 lightline.txt	lightline.txt	/*lightline.txt*
 neobundle	neobundle.txt	/*neobundle*
+neobundle#append()	neobundle.txt	/*neobundle#append()*
 neobundle#begin()	neobundle.txt	/*neobundle#begin()*
 neobundle#bundle()	neobundle.txt	/*neobundle#bundle()*
 neobundle#call_hook()	neobundle.txt	/*neobundle#call_hook()*
@@ -220,9 +223,9 @@ neobundle#has_fresh_cache()	neobundle.txt	/*neobundle#has_fresh_cache()*
 neobundle#hooks	neobundle.txt	/*neobundle#hooks*
 neobundle#is_installed()	neobundle.txt	/*neobundle#is_installed()*
 neobundle#is_sourced()	neobundle.txt	/*neobundle#is_sourced()*
+neobundle#load_cache()	neobundle.txt	/*neobundle#load_cache()*
 neobundle#load_toml()	neobundle.txt	/*neobundle#load_toml()*
 neobundle#local()	neobundle.txt	/*neobundle#local()*
-neobundle#rc()	neobundle.txt	/*neobundle#rc()*
 neobundle#source()	neobundle.txt	/*neobundle#source()*
 neobundle#tap()	neobundle.txt	/*neobundle#tap()*
 neobundle#tapped	neobundle.txt	/*neobundle#tapped*
@@ -249,16 +252,17 @@ neobundle-options-depends	neobundle.txt	/*neobundle-options-depends*
 neobundle-options-directory	neobundle.txt	/*neobundle-options-directory*
 neobundle-options-disabled	neobundle.txt	/*neobundle-options-disabled*
 neobundle-options-external_commands	neobundle.txt	/*neobundle-options-external_commands*
+neobundle-options-fetch	neobundle.txt	/*neobundle-options-fetch*
 neobundle-options-focus	neobundle.txt	/*neobundle-options-focus*
 neobundle-options-force	neobundle.txt	/*neobundle-options-force*
 neobundle-options-gui	neobundle.txt	/*neobundle-options-gui*
 neobundle-options-hooks	neobundle.txt	/*neobundle-options-hooks*
+neobundle-options-install_process_timeout	neobundle.txt	/*neobundle-options-install_process_timeout*
 neobundle-options-lazy	neobundle.txt	/*neobundle-options-lazy*
 neobundle-options-name	neobundle.txt	/*neobundle-options-name*
 neobundle-options-overwrite	neobundle.txt	/*neobundle-options-overwrite*
 neobundle-options-recipe	neobundle.txt	/*neobundle-options-recipe*
 neobundle-options-regular_name	neobundle.txt	/*neobundle-options-regular_name*
-neobundle-options-resettable	neobundle.txt	/*neobundle-options-resettable*
 neobundle-options-rtp	neobundle.txt	/*neobundle-options-rtp*
 neobundle-options-script_type	neobundle.txt	/*neobundle-options-script_type*
 neobundle-options-site	neobundle.txt	/*neobundle-options-site*
