@@ -22,8 +22,6 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
 
 endif
 
-"コマンドラインモードでデフォルトでコマンドラインウィンドウを使うようにする
-
 "autocmd bufenter * if (bufname(bufnr('%')) !~ "^NERD.*" ) | call s:commands_to_cmd_mode() | endif "NERDtree以外の場合のみ
 "function! s:commands_to_cmd_mode()
 "  nnoremap <buffer> : q:
@@ -37,11 +35,13 @@ endif
 "  vnoremap <buffer> <C-_> q:/\v
 "  vnoremap <buffer> <C-?> q:?\v
 "endfunction
+
+"コマンドラインモードでデフォルトでコマンドラインウィンドウを使うようにする
 nnoremap : q:
 nnoremap / q:/
 nnoremap ? q:?
 nnoremap <C-_> q:/\v
-nnoremap <C-?> q:?\v
+"nnoremap <C-?> q:?\v
 vnoremap : q:
 vnoremap / q:/
 vnoremap ? q:?
@@ -53,9 +53,8 @@ autocmd CmdwinEnter * call s:init_cmdwin()
 function! s:init_cmdwin()
   inoremap <buffer> <C-C> <ESC>:q<CR>
   nnoremap <buffer> <C-C> :q<CR>
-  nnoremap <buffer> : <nop>
   nnoremap <buffer> <C-_> /\v
-  nnoremap <buffer> <C-?> ?\v
+  "nnoremap <buffer> <C-?> ?\v
   nnoremap <buffer> / /
   nnoremap <buffer> ? ?
   normal j
@@ -86,6 +85,12 @@ noremap! <Left> <nop>
 noremap! <Right> <nop>
 noremap! <Up> <nop>
 noremap! <Down> <nop>
+
+"コマンドラインモードでのカーソル移動
+cnoremap <C-h> <Left>
+cnoremap <C-j> <Down>
+cnoremap <C-k> <Up>
+cnoremap <C-l> <Right>
 
 "insertモードでのCtrl-Uを無効にする
 inoremap <C-U> <nop>
