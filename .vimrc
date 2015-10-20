@@ -17,6 +17,9 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
     "lightline.vim
     NeoBundle 'itchyny/lightline.vim'
 
+    "vim-quickrun
+    NeoBundle 'thinca/vim-quickrun'
+
     call neobundle#end()
   endif
 
@@ -161,3 +164,9 @@ function! s:GetBufByte()
     return byte - 1
   endif
 endfunction
+
+"vim-quickrunショートカット
+nnoremap Q q:QuickRun<Space>
+
+":set syntax=ショートカット
+nnoremap S q:set<Space>syntax=
