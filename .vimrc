@@ -9,7 +9,7 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
     "NERDTree
     NeoBundle 'scrooloose/nerdtree'
     autocmd vimenter * nested if @% == '' && s:GetBufByte() == 0 | NERDTree | endif
-    nnoremap <C-n> :NERDTree<Enter>
+    nnoremap Cn :NERDTree<Enter>
 
     "NERDTree以外のバッファがなくなったときにNERDTreeを閉じる
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -137,6 +137,7 @@ set number
 
 "バックスペースを有効に
 set backspace=start,eol,indent
+"set backspace=
 
 "シンタックスをオンに
 syntax on
@@ -165,8 +166,14 @@ function! s:GetBufByte()
   endif
 endfunction
 
+"独自コマンドに使うため無効化
+nnoremap C <nop>
+
 "vim-quickrunショートカット
-nnoremap Q q:QuickRun<Space>
+nnoremap Cq q:QuickRun<Space>
 
 ":set syntax=ショートカット
-nnoremap S q:set<Space>syntax=
+nnoremap Cs q:set<Space>syntax=
+
+"vimgrepショートカット
+nnoremap Cg q:vimgrep<Space>
