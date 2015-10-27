@@ -13,6 +13,7 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
 
     "NERDTree以外のバッファがなくなったときにNERDTreeを閉じる
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    let NERDTreeShowLineNumbers=1
 
     "lightline.vim
     NeoBundle 'itchyny/lightline.vim'
