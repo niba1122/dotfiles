@@ -6,6 +6,8 @@
 export PATH=$HOME/.dotfiles/.mygit/bin:$PATH
 alias tmux="TERM=screen-256color-bce tmux"
 
+zstyle ':completion:*:default' menu select=1
+
 ##############################
 # Oh-my-zsh settings
 ##############################

@@ -91,10 +91,11 @@ noremap! <Up> <nop>
 noremap! <Down> <nop>
 
 "コマンドラインモードでのカーソル移動
-cnoremap <C-h> <Left>
-cnoremap <C-j> <Down>
-cnoremap <C-k> <Up>
-cnoremap <C-l> <Right>
+cnoremap <C-A> <C-B>
+cnoremap <C-B> <Left>
+cnoremap <C-F> <Right>
+cnoremap <ESC>b <S-Left>
+cnoremap <ESC>f <S-Right>
 
 "insertモードでのCtrl-Uを無効にする
 inoremap <C-U> <nop>
