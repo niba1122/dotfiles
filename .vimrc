@@ -21,6 +21,9 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
     "vim-quickrun
     NeoBundle 'thinca/vim-quickrun'
 
+    "vim-elixir
+    NeoBundle 'elixir-lang/vim-elixir'
+
     call neobundle#end()
   endif
 
