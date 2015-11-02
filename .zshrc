@@ -6,6 +6,8 @@
 export PATH=$HOME/.dotfiles/.mygit/bin:$PATH
 alias tmux="TERM=screen-256color-bce tmux"
 
+bindkey -e
+
 zstyle ':completion:*:default' menu select=1
 
 autoload history-search-end
@@ -13,6 +15,12 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
+
+zmodload zsh/complist
+bindkey -M menuselect '^B' vi-backward-char
+bindkey -M menuselect '^N' vi-down-line-or-history
+bindkey -M menuselect '^P' vi-up-line-or-history
+bindkey -M menuselect '^F' vi-forward-char
 
 ##############################
 # Oh-my-zsh settings
