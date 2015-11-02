@@ -43,6 +43,9 @@ endif
 "  vnoremap <buffer> <C-?> q:?\v
 "endfunction
 
+"EXモードを使わない
+nnoremap Q <nop>
+
 "コマンドラインモードでデフォルトでコマンドラインウィンドウを使うようにする
 nnoremap : q:
 nnoremap / q:/
