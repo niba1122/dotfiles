@@ -24,6 +24,9 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
     "vim-elixir
     NeoBundle 'elixir-lang/vim-elixir'
 
+    "vim-slim
+    NeoBundle 'slim-template/vim-slim'
+
     call neobundle#end()
   endif
 
@@ -184,4 +187,5 @@ nnoremap Cq q:QuickRun<Space>
 nnoremap Cs q:set<Space>syntax=
 
 "vimgrepショートカット
-nnoremap Cg q:vimgrep<Space>
+nnoremap Cg q:vimgrep<Space><Space>\|<Space>cw<Esc>hhhhi
+
