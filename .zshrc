@@ -1,6 +1,5 @@
 ##############################
-# My settings
-##############################
+# My settings ##############################
 
 # Adding the PATH for git 
 export PATH=$HOME/.dotfiles/.mygit/bin:$PATH
@@ -21,6 +20,10 @@ bindkey -M menuselect '^B' vi-backward-char
 bindkey -M menuselect '^N' vi-down-line-or-history
 bindkey -M menuselect '^P' vi-up-line-or-history
 bindkey -M menuselect '^F' vi-forward-char
+
+# git-completion
+#source $HOME/.dotfiles/.mygit/git-completion.zsh
+#source $HOME/.dotfiles/.mygit/git-prompt.sh
 
 ##############################
 # Oh-my-zsh settings
