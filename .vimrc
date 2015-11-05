@@ -27,6 +27,9 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
     "vim-slim
     NeoBundle 'slim-template/vim-slim'
 
+    "vim-coffee-script
+    NeoBundle 'kchmck/vim-coffee-script'
+
     call neobundle#end()
   endif
 
