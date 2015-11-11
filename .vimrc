@@ -30,6 +30,9 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
     "vim-coffee-script
     NeoBundle 'kchmck/vim-coffee-script'
 
+    "vim-endwise
+    NeoBundle 'tpope/vim-endwise.git'
+
     call neobundle#end()
   endif
 
