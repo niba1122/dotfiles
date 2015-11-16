@@ -105,12 +105,14 @@ noremap! <Right> <nop>
 noremap! <Up> <nop>
 noremap! <Down> <nop>
 
-"コマンドラインモードでのカーソル移動
+"コマンドラインモードでのzsh風操作
 cnoremap <C-A> <C-B>
 cnoremap <C-B> <Left>
 cnoremap <C-F> <Right>
+cnoremap <ESC> <nop>
 cnoremap <ESC>b <S-Left>
 cnoremap <ESC>f <S-Right>
+cnoremap <C-D> <Del>
 
 "insertモードでのCtrl-Uを無効にする
 inoremap <C-U> <nop>
@@ -145,6 +147,9 @@ let g:solarized_italic=1
 let g:solarized_contrast='normal'
 let g:solarized_visibility='normal'
 
+
+"検索をファイルの先頭へループしない
+set nowrapscan
 
 "検索時のハイライト
 set hlsearch
