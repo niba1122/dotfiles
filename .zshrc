@@ -124,3 +124,8 @@ bindkey '^[OB' do-nothing
 bindkey '^[OC' do-nothing
 bindkey '^[OD' do-nothing
 
+bindkey -M menuselect '^[OA' do-nothing
+bindkey -M menuselect '^[OB' do-nothing
+bindkey -M menuselect '^[OC' do-nothing
+bindkey -M menuselect '^[OD' do-nothing
+
