@@ -1,5 +1,6 @@
 ##############################
-# My settings ##############################
+# My settings 
+##############################
 
 # Adding the PATH for git 
 export PATH=$HOME/.dotfiles/.mygit/bin:$PATH
@@ -113,3 +114,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# カーソルキーを無効にする
+do-nothing() {
+}
+zle -N do-nothing
+bindkey '^[OA' do-nothing
+bindkey '^[OB' do-nothing
+bindkey '^[OC' do-nothing
+bindkey '^[OD' do-nothing
+
