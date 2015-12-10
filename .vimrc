@@ -9,7 +9,7 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
     "NERDTree
     NeoBundle 'scrooloose/nerdtree'
     autocmd vimenter * nested if @% == '' && s:GetBufByte() == 0 | NERDTree | endif
-    nnoremap Cn :NERDTree<Enter>
+    nnoremap <Space>n :NERDTree<Enter>
 
     "NERDTree以外のバッファがなくなったときにNERDTreeを閉じる
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -188,15 +188,17 @@ function! s:GetBufByte()
   endif
 endfunction
 
-"独自コマンドに使うため無効化
-nnoremap C <nop>
 
 "vim-quickrunショートカット
-nnoremap Cq q:QuickRun<Space>
+nnoremap <Space>q q:QuickRun<Space>
 
 ":set syntax=ショートカット
-nnoremap Cs q:set<Space>syntax=
+nnoremap <Space>s q:set<Space>syntax=
 
 "vimgrepショートカット
-nnoremap Cg q:vimgrep<Space><Space>\|<Space>cw<Esc>hhhhi
+nnoremap <Space>g q:vimgrep<Space><Space>\|<Space>cw<Esc>hhhhi
 
+nnoremap <Space>h <C-W>h
+nnoremap <Space>j <C-W>j
+nnoremap <Space>k <C-W>k
+nnoremap <Space>l <C-W>l
