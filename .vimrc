@@ -175,6 +175,9 @@ set smartindent
 "クリップボード設定
 set clipboard=autoselect,unnamed
 
+"ノーマルモードのxでレジスタに保存しない
+nnoremap x "_x
+
 "コマンドラインモードでのタブキーでの補完
 set wildmenu
 

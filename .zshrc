@@ -8,7 +8,7 @@ alias tmux="TERM=screen-256color-bce tmux"
 
 bindkey -e
 
-zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*:default' menu select=2
 
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
