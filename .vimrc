@@ -11,6 +11,9 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
     autocmd vimenter * nested if @% == '' && s:GetBufByte() == 0 | NERDTree | endif
     nnoremap <Space>n :NERDTree<Enter>
 
+    "unite.vim
+    NeoBundle 'Shougo/unite.vim'
+
     "NERDTree以外のバッファがなくなったときにNERDTreeを閉じる
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
     let NERDTreeShowLineNumbers=1
@@ -70,9 +73,9 @@ vnoremap <C-?> q:?\v
 
 autocmd CmdwinEnter * call s:init_cmdwin()
 function! s:init_cmdwin()
-  inoremap <buffer> <C-C> <ESC>:q<CR>
-  nnoremap <buffer> <C-C> :q<CR>
-  nnoremap <buffer> <C-_> /\v
+  inoremap <silent> <buffer> <C-C> <ESC>:q<CR>
+  nnoremap <silent> <buffer> <C-C> :q<CR>
+  nnoremap <silent> <buffer> <C-_> /\v
   "nnoremap <buffer> <C-?> ?\v
   nnoremap <buffer> / /
   nnoremap <buffer> ? ?
@@ -205,3 +208,11 @@ nnoremap <Space>h <C-W>h
 nnoremap <Space>j <C-W>j
 nnoremap <Space>k <C-W>k
 nnoremap <Space>l <C-W>l
+
+"unite.vim諸ショートカット
+nnoremap [unite] <nop>
+nmap <Space>u [unite]
+nnoremap <silent> [unite]f :<C-U>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> [unite]b :<C-U>Unite<Space>buffer<CR>
+nnoremap <silent> [unite]r :<C-U>Unite<Space>register<CR>
+
