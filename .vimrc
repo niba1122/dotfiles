@@ -7,16 +7,22 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
     NeoBundleFetch 'Shougo/neobundle.vim'
 
     "NERDTree
-    NeoBundle 'scrooloose/nerdtree'
-    autocmd vimenter * nested if @% == '' && s:GetBufByte() == 0 | NERDTree | endif
-    nnoremap <Space>n :NERDTree<Enter>
+    "NeoBundle 'scrooloose/nerdtree'
+    "autocmd vimenter * nested if @% == '' && s:GetBufByte() == 0 | NERDTree | endif
+    "nnoremap <Space>n :NERDTree<Enter>
 
     "unite.vim
     NeoBundle 'Shougo/unite.vim'
 
+    "vimproc
+    NeoBundle 'Shougo/vimproc'
+
+    "VimFiler
+    NeoBundle 'Shougo/vimfiler.vim'
+
     "NERDTree以外のバッファがなくなったときにNERDTreeを閉じる
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-    let NERDTreeShowLineNumbers=1
+    "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    "let NERDTreeShowLineNumbers=1
 
     "lightline.vim
     NeoBundle 'itchyny/lightline.vim'
@@ -77,6 +83,8 @@ function! s:init_cmdwin()
   nnoremap <silent> <buffer> <C-C> :q<CR>
   nnoremap <silent> <buffer> <C-_> /\v
   "nnoremap <buffer> <C-?> ?\v
+  inoremap <buffer> <C-p> <Up>
+  inoremap <buffer> <C-n> <Down>
   nnoremap <buffer> / /
   nnoremap <buffer> ? ?
   normal j
@@ -209,10 +217,51 @@ nnoremap <Space>j <C-W>j
 nnoremap <Space>k <C-W>k
 nnoremap <Space>l <C-W>l
 
+"vimfilerショートカット
+nnoremap <Space>f :VimFiler<Space>-split<Space>-winwidth=35<Space>-simple<Space>-no-quit<CR>
+
+" ag(The Silver Searcher)が使えればunite grepに ag(The Silver Searcher) を使う
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+
 "unite.vim諸ショートカット
 nnoremap [unite] <nop>
 nmap <Space>u [unite]
-nnoremap <silent> [unite]f :<C-U>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> [unite]u :<C-U>Unite<CR>
+nnoremap <silent> [unite]f :<C-U>UniteWithBufferDir<Space>-buffer-name=files<Space>file<CR>
 nnoremap <silent> [unite]b :<C-U>Unite<Space>buffer<CR>
 nnoremap <silent> [unite]r :<C-U>Unite<Space>register<CR>
 
+let g:unite_enable_start_insert=1
+let g:unite_source_history_yank_enable =1
+let g:unite_source_file_mru_limit = 200
+
+autocmd FileType unite call s:unite_my_settings()
+function! s:unite_my_settings()
+  nmap <buffer> x     <Plug>(unite_quick_match_jump)
+
+  let unite = unite#get_current_unite()
+  if unite.profile_name ==# 'search'
+    nnoremap <silent><buffer><expr> r     unite#do_action('replace')
+  else
+    nnoremap <silent><buffer><expr> r     unite#do_action('rename')
+  endif
+
+  nnoremap <silent><buffer><expr> cd     unite#do_action('lcd')
+
+	"ctrl+jで縦に分割して開く
+	nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+	inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+	"ctrl+lで横に分割して開く
+	nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+	inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+	"ctrl+oでその場所に開く
+	nnoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
+	inoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
+  "Ctrl-Cで閉じる
+  nmap <buffer> <C-c> <Plug>(unite_exit)
+  imap <buffer> <C-c> <Plug>(unite_exit)
+endfunction

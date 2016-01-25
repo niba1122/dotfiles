@@ -15,5 +15,11 @@ fi
 cd $HOME
 cd $DOTFILES_PATH
 
+vim -c NeoBundleInstall -c q
+
+cd $DOTFILES_PATH/.vim/bundle/vimproc
+make
+cd $DOTFILES_PATH
+
 git submodule init
 git submodule update
