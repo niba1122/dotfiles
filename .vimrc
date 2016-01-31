@@ -47,20 +47,6 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
 
 endif
 
-"autocmd bufenter * if (bufname(bufnr('%')) !~ "^NERD.*" ) | call s:commands_to_cmd_mode() | endif "NERDtree以外の場合のみ
-"function! s:commands_to_cmd_mode()
-"  nnoremap <buffer> : q:
-"  nnoremap <buffer> / q:/
-"  nnoremap <buffer> ? q:?
-"  nnoremap <buffer> <C-_> q:/\v
-"  nnoremap <buffer> <C-?> q:?\v
-"  vnoremap <buffer> : q:
-"  vnoremap <buffer> / q:/
-"  vnoremap <buffer> ? q:?
-"  vnoremap <buffer> <C-_> q:/\v
-"  vnoremap <buffer> <C-?> q:?\v
-"endfunction
-
 "EXモードを使わない
 nnoremap Q <nop>
 
@@ -83,10 +69,10 @@ function! s:init_cmdwin()
   nnoremap <silent> <buffer> <C-C> :q<CR>
   nnoremap <silent> <buffer> <C-_> /\v
   "nnoremap <buffer> <C-?> ?\v
-  inoremap <buffer> <C-p> <Up>
-  inoremap <buffer> <C-n> <Down>
   nnoremap <buffer> / /
   nnoremap <buffer> ? ?
+  inoremap <buffer><expr> <C-p> g:CmdwinPrevious()
+  inoremap <buffer><expr> <C-n> g:CmdwinNext()
   normal j
   startinsert!
 endfunction
@@ -264,4 +250,41 @@ function! s:unite_my_settings()
   "Ctrl-Cで閉じる
   nmap <buffer> <C-c> <Plug>(unite_exit)
   imap <buffer> <C-c> <Plug>(unite_exit)
+
+  imap <buffer><expr> <BS> g:UniteFileBackspace()
+
+  imap <buffer> <C-h> <BS>
+
 endfunction
+
+function! CmdwinPrevious()
+  if col('.') == 1
+    call feedkeys("\<ESC>k^i",'n')
+  else
+    call feedkeys("\<C-p>",'n')
+  endif
+  return ''
+endfunction
+
+function! CmdwinNext()
+  if col('.') == 1
+    call feedkeys("\<ESC>j^i",'n')
+  else
+    call feedkeys("\<C-n>",'n')
+  endif
+  return ''
+endfunction
+
+
+function! UniteFileBackspace()
+  if strlen(getline(1)) == 0
+    call feedkeys("\<Plug>(unite_delete_backward_path)")
+  else
+    call feedkeys("\<BS>",'n')
+  endif
+  return ''
+endfunction
+
+
+"ESCでハイライト除去
+nnoremap <ESC><ESC> :<C-u>nohlsearch<CR><ESC>
