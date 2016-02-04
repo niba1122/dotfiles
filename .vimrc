@@ -258,7 +258,7 @@ function! s:unite_my_settings()
 endfunction
 
 function! CmdwinPrevious()
-  if col('.') == 1
+  if col('.') == 1 || (col('.') == 2 && getline('.')[0] == '/')
     call feedkeys("\<ESC>k^i",'n')
   else
     call feedkeys("\<C-p>",'n')
@@ -267,7 +267,7 @@ function! CmdwinPrevious()
 endfunction
 
 function! CmdwinNext()
-  if col('.') == 1
+  if col('.') == 1 || (col('.') == 2 && getline('.')[0] == '/')
     call feedkeys("\<ESC>j^i",'n')
   else
     call feedkeys("\<C-n>",'n')
