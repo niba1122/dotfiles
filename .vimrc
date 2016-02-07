@@ -14,6 +14,9 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
     "unite.vim
     NeoBundle 'Shougo/unite.vim'
 
+    "neomru
+    NeoBundle 'Shougo/neomru.vim'
+
     "vimproc
     NeoBundle 'Shougo/vimproc'
 
@@ -203,6 +206,9 @@ nnoremap <Space>j <C-W>j
 nnoremap <Space>k <C-W>k
 nnoremap <Space>l <C-W>l
 
+"neomru日時
+let g:neomru#time_format = "(%Y/%m/%d %H:%M:%S) "
+
 "vimfilerショートカット
 nnoremap <Space>f :VimFiler<Space>-split<Space>-winwidth=35<Space>-simple<Space>-no-quit<CR>
 
@@ -220,6 +226,7 @@ nnoremap <silent> [unite]u :<C-U>Unite<CR>
 nnoremap <silent> [unite]f :<C-U>UniteWithBufferDir<Space>-buffer-name=files<Space>file<CR>
 nnoremap <silent> [unite]b :<C-U>Unite<Space>buffer<CR>
 nnoremap <silent> [unite]r :<C-U>Unite<Space>register<CR>
+nnoremap <silent> [unite]m :<C-U>Unite<Space>file_mru<CR>
 
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
@@ -248,8 +255,8 @@ function! s:unite_my_settings()
 	nnoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
 	inoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
   "Ctrl-Cで閉じる
-  nmap <buffer> <C-c> <Plug>(unite_exit)
-  imap <buffer> <C-c> <Plug>(unite_exit)
+  nmap <buffer> <C-c> :q<CR>
+  imap <buffer> <C-c> <ESC>:q<CR>
 
   imap <buffer><expr> <BS> g:UniteFileBackspace()
 
@@ -274,7 +281,6 @@ function! CmdwinNext()
   endif
   return ''
 endfunction
-
 
 function! UniteFileBackspace()
   if strlen(getline(1)) == 0
