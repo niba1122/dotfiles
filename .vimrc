@@ -27,8 +27,10 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
     "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
     "let NERDTreeShowLineNumbers=1
 
+if has('mac')
     "lightline.vim
     NeoBundle 'itchyny/lightline.vim'
+endif
 
     "vim-quickrun
     NeoBundle 'thinca/vim-quickrun'
@@ -126,7 +128,8 @@ inoremap <C-U> <nop>
 "デザイン&カラースキーム
 set laststatus=2
 if !has('gui_running')
-  set t_Co=256
+  "set t_Co=256
+  set t_Co=16
 endif
 let g:lightline = {
       \ 'colorscheme': 'wombat',
