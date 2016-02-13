@@ -1,35 +1,3 @@
-##############################
-# My settings 
-##############################
-
-# Adding the PATH for git 
-export PATH=$HOME/.dotfiles/.mygit/bin:$PATH
-alias tmux="TERM=screen-256color-bce tmux"
-
-bindkey -e
-
-zstyle ':completion:*:default' menu select=2
-
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end
-
-zmodload zsh/complist
-bindkey -M menuselect '^B' vi-backward-char
-bindkey -M menuselect '^N' vi-down-line-or-history
-bindkey -M menuselect '^P' vi-up-line-or-history
-bindkey -M menuselect '^F' vi-forward-char
-
-# git-completion
-#source $HOME/.dotfiles/.mygit/git-completion.zsh
-#source $HOME/.dotfiles/.mygit/git-prompt.sh
-
-##############################
-# Oh-my-zsh settings
-##############################
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.dotfiles/.oh-my-zsh
 
@@ -37,6 +5,7 @@ export ZSH=$HOME/.dotfiles/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
+#ZSH_THEME="robbyrussell"
 ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -115,6 +84,30 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Adding the PATH for git 
+export PATH=$HOME/.dotfiles/.mygit/bin:$PATH
+alias tmux="TERM=screen-256color-bce tmux"
+
+bindkey -e
+
+zstyle ':completion:*:default' menu select=2
+
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
+
+zmodload zsh/complist
+bindkey -M menuselect '^B' vi-backward-char
+bindkey -M menuselect '^N' vi-down-line-or-history
+bindkey -M menuselect '^P' vi-up-line-or-history
+bindkey -M menuselect '^F' vi-forward-char
+
+# git-completion
+#source $HOME/.dotfiles/.mygit/git-completion.zsh
+#source $HOME/.dotfiles/.mygit/git-prompt.sh
+
 # カーソルキーを無効にする
 do-nothing() {
 }
@@ -128,4 +121,3 @@ bindkey -M menuselect '^[OA' do-nothing
 bindkey -M menuselect '^[OB' do-nothing
 bindkey -M menuselect '^[OC' do-nothing
 bindkey -M menuselect '^[OD' do-nothing
-
