@@ -123,7 +123,7 @@ inoremap <C-U> <nop>
 "inoremap { {}<Left>
 "inoremap < <><Left>
 
-"デザイン
+"デザイン&カラースキーム
 set laststatus=2
 if !has('gui_running')
   set t_Co=256
@@ -133,20 +133,14 @@ let g:lightline = {
       \ 'separator': { 'left': '', 'right': '' },
       \ }
 
-"solarizeの設定
-
 set background=dark
-colorscheme solarized
-
-let g:solarized_termcolors=16
-let g:solarized_termtrans=0
-let g:solarized_degrade=0
-let g:solarized_bold=1
-let g:solarized_underline=1
-let g:solarized_italic=1
-let g:solarized_contrast='normal'
-let g:solarized_visibility='normal'
-
+colorscheme jellybeans
+"let g:jellybeans_overrides = {
+"\    'Todo': { 'guifg': '303030', 'guibg': 'f0f000',
+"\              'ctermfg': 'Black', 'ctermbg': 'Yellow',
+"\              'attr': 'bold' },
+"\}
+"let g:jellybeans_use_lowcolor_black = 0
 
 "検索をファイルの先頭へループしない
 set nowrapscan
