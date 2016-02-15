@@ -2,6 +2,22 @@
 
 DOTFILES_PATH=$HOME'/.dotfiles'
 
+if [ -e $HOME/.oh-my-zsh ]; then
+  mv $HOME/.oh-my-zsh $HOME/_oh-my-zsh
+fi
+if [ -e $HOME/.zshrc ]; then
+  mv $HOME/.zshrc $HOME/_zshrc
+fi
+if [ -e $HOME/.vimrc ]; then
+  mv $HOME/.vimrc $HOME/_vimrc
+fi
+if [ -e $HOME/.vim ]; then
+  mv $HOME/.vim $HOME/_vim
+fi
+if [ -e $HOME/.tmux.conf ]; then
+  mv $HOME/.tmux.conf $HOME/_tmux_conf
+fi
+
 ln -nfs $DOTFILES_PATH/.oh-my-zsh/ $HOME/.oh-my-zsh
 ln -nfs $DOTFILES_PATH/.zshrc $HOME/.zshrc
 ln -nfs $DOTFILES_PATH/.vimrc $HOME/.vimrc
