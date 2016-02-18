@@ -258,7 +258,7 @@ function! s:unite_my_settings()
 
 endfunction
 
-function! CmdwinPrevious()
+function! g:CmdwinPrevious()
   if col('.') == 1 || (col('.') == 2 && getline('.')[0] == '/')
     call feedkeys("\<ESC>k^i",'n')
   else
@@ -267,7 +267,7 @@ function! CmdwinPrevious()
   return ''
 endfunction
 
-function! CmdwinNext()
+function! g:CmdwinNext()
   if col('.') == 1 || (col('.') == 2 && getline('.')[0] == '/')
     call feedkeys("\<ESC>j^i",'n')
   else
@@ -276,7 +276,7 @@ function! CmdwinNext()
   return ''
 endfunction
 
-function! UniteFileBackspace()
+function! g:UniteFileBackspace()
   if strlen(getline(1)) == 0
     call feedkeys("\<Plug>(unite_delete_backward_path)")
   else
