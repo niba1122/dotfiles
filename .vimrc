@@ -6,11 +6,6 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
     call neobundle#begin(expand('~/.dotfiles/.vim/bundle/'))
     NeoBundleFetch 'Shougo/neobundle.vim'
 
-    "NERDTree
-    "NeoBundle 'scrooloose/nerdtree'
-    "autocmd vimenter * nested if @% == '' && s:GetBufByte() == 0 | NERDTree | endif
-    "nnoremap <Space>n :NERDTree<Enter>
-
     "unite.vim
     NeoBundle 'Shougo/unite.vim'
 
