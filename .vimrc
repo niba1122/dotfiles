@@ -14,6 +14,9 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
     "unite.vim
     NeoBundle 'Shougo/unite.vim'
 
+    "neoyank
+    NeoBundle 'Shougo/neoyank.vim'
+
     "neomru
     NeoBundle 'Shougo/neomru.vim'
 
@@ -219,7 +222,7 @@ nmap <Space>u [unite]
 nnoremap <silent> [unite]u :<C-U>Unite<CR>
 nnoremap <silent> [unite]f :<C-U>UniteWithBufferDir<Space>-buffer-name=files<Space>file<CR>
 nnoremap <silent> [unite]b :<C-U>Unite<Space>buffer<CR>
-nnoremap <silent> [unite]r :<C-U>Unite<Space>register<CR>
+nnoremap <silent> [unite]r :<C-U>Unite<Space>history/yank<CR>
 nnoremap <silent> [unite]m :<C-U>Unite<Space>file_mru<CR>
 
 let g:unite_enable_start_insert=1
