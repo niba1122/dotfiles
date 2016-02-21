@@ -77,8 +77,8 @@ function! s:init_cmdwin()
   "nnoremap <buffer> <C-?> ?\v
   nnoremap <buffer> / /
   nnoremap <buffer> ? ?
-  inoremap <buffer><expr> <C-p> g:CmdwinPrevious()
-  inoremap <buffer><expr> <C-n> g:CmdwinNext()
+  inoremap <buffer><expr> <C-p> CmdwinPrevious()
+  inoremap <buffer><expr> <C-n> CmdwinNext()
   normal j
   startinsert!
 endfunction
@@ -255,13 +255,13 @@ function! s:unite_my_settings()
   nmap <buffer> <C-c> :q<CR>
   imap <buffer> <C-c> <ESC>:q<CR>
 
-  imap <buffer><expr> <BS> g:UniteFileBackspace()
+  imap <buffer><expr> <BS> UniteFileBackspace()
 
   imap <buffer> <C-h> <BS>
 
 endfunction
 
-function! g:CmdwinPrevious()
+function! CmdwinPrevious()
   if col('.') == 1 || (col('.') == 2 && getline('.')[0] == '/')
     call feedkeys("\<ESC>k^i",'n')
   else
@@ -270,7 +270,7 @@ function! g:CmdwinPrevious()
   return ''
 endfunction
 
-function! g:CmdwinNext()
+function! CmdwinNext()
   if col('.') == 1 || (col('.') == 2 && getline('.')[0] == '/')
     call feedkeys("\<ESC>j^i",'n')
   else
@@ -279,7 +279,7 @@ function! g:CmdwinNext()
   return ''
 endfunction
 
-function! g:UniteFileBackspace()
+function! UniteFileBackspace()
   if strlen(getline(1)) == 0
     call feedkeys("\<Plug>(unite_delete_backward_path)")
   else
