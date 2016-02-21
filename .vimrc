@@ -178,6 +178,9 @@ nnoremap x "_x
 "コマンドラインモードでのタブキーでの補完
 set wildmenu
 
+"UTF-8
+set encoding=UTF-8
+
 "バッファ文字数を数える関数
 function! s:GetBufByte()
   let byte = line2byte(line('$') + 1)
