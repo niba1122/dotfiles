@@ -50,7 +50,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+# plugins=(git)
 
 # User configuration
 
@@ -86,6 +86,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Adding the PATH for git 
 export PATH=$HOME/.dotfiles/.mygit/bin:$PATH
+
 alias tmux="TERM=screen-256color-bce tmux"
 
 bindkey -e
@@ -121,3 +122,42 @@ bindkey -M menuselect '^[OA' do-nothing
 bindkey -M menuselect '^[OB' do-nothing
 bindkey -M menuselect '^[OC' do-nothing
 bindkey -M menuselect '^[OD' do-nothing
+
+# ----------------------
+# Git Aliases
+# ----------------------
+
+alias ga='git add'
+alias gaa='git add -A'
+alias gb='git branch'
+alias gbd='git branch -D'
+alias gco='git commit -m'
+alias gcoa='git commit -a -m'
+alias gch='git checkout'
+alias gchb='git checkout -b'
+alias gd='git diff | vim -'
+alias gdc='git diff --cached | vim -'
+alias gf='git fetch'
+alias gl='git log'
+alias gpl='git pull-current'
+alias gps='git push-current'
+alias gr='git reset'
+alias gss='git stash'
+alias gssl='git stash list'
+alias gssp='git stash pop'
+alias gst='git status'
+
+
+# ----------------------
+# Git Functions
+# ----------------------
+
+function gchr() { git checkout -b $1 origin/$1 }
+
+function _gchr() {
+  local -a branches
+  branches=($( git branch -a | grep -E '^ *remotes/origin/' | sed -E 's/^ *remotes\/origin\///' | grep -v -E '^HEAD' ))
+  compadd $branches
+}
+
+compdef _gchr gchr
