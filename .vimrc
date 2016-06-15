@@ -181,6 +181,9 @@ set wildmenu
 "UTF-8
 set encoding=UTF-8
 
+"空白を表示
+set lcs=tab:>.,trail:_,extends:\
+
 "バッファ文字数を数える関数
 function! s:GetBufByte()
   let byte = line2byte(line('$') + 1)
