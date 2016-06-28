@@ -181,8 +181,13 @@ set wildmenu
 "UTF-8
 set encoding=UTF-8
 
-"空白を表示
-set lcs=tab:>.,trail:_,extends:\
+"空白/タブなどを表示
+set list
+set lcs=tab:>-,extends:\
+
+highlight WhitespaceEOL ctermbg=blue guibg=blue
+match WhitespaceEOL /\s\+$/
+autocmd WinEnter * match WhitespaceEOL /\s\+$/
 
 "バッファ文字数を数える関数
 function! s:GetBufByte()
