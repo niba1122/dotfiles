@@ -1,0 +1,5 @@
+bundle/
+!bundle/neobundle.vim
+!bundle/NeoBundle.lock
+.netrwhist
+
