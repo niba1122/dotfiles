@@ -26,6 +26,10 @@ $cli set option.emacsmode_OptionWCopy 1
 /bin/echo -n .
 $cli set remap.jis_commandR2commandR_toggle_kana_eisuu 1
 /bin/echo -n .
+$cli set remap.jis_escape2eisuuAndEscape 1
+/bin/echo -n .
 $cli set repeat.initial_wait 250
+/bin/echo -n .
+$cli set repeat.wait 33
 /bin/echo -n .
 /bin/echo
