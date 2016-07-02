@@ -133,7 +133,8 @@ if !has('gui_running')
 endif
 let g:lightline = {
       \ 'colorscheme': 'wombat',
-      \ 'separator': { 'left': '', 'right': '' },
+      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+      \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
       \ }
 
 set background=dark
