@@ -253,15 +253,15 @@ function! s:unite_my_settings()
 
   nnoremap <silent><buffer><expr> cd     unite#do_action('lcd')
 
-	"ctrl+jで縦に分割して開く
-	nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-	inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-	"ctrl+lで横に分割して開く
-	nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-	inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-	"ctrl+oでその場所に開く
-	nnoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
-	inoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
+  "ctrl+jで縦に分割して開く
+  nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+  inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+  "ctrl+lで横に分割して開く
+  nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+  inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+  "ctrl+oでその場所に開く
+  nnoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
+  inoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
   "Ctrl-Cで閉じる
   nmap <buffer> <C-c> :q<CR>
   imap <buffer> <C-c> <ESC>:q<CR>
