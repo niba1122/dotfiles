@@ -131,23 +131,18 @@ set laststatus=2
 if !has('gui_running')
   set t_Co=256
 endif
+
+set noshowmode
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
       \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" },
+      \ 'component': { 'readonly': '%{&readonly?"\ue0a2":""}' },
       \ 'component_function': {
       \   'filename': 'LightLineFilename',
       \   'mode': 'LightLineMode'
       \ },
       \ }
-
-function! LightLineModified()
-  return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-endfunction
-
-function! LightLineReadonly()
-  return &ft !~? 'help' && &readonly ? 'RO' : ''
-endfunction
 
 function! LightLineFilename()
   let fname = expand('%:t')
@@ -157,9 +152,7 @@ function! LightLineFilename()
         \ &ft == 'vimfiler' ? vimfiler#get_status_string() :
         \ &ft == 'unite' ? unite#get_status_string() :
         \ &ft == 'vimshell' ? vimshell#get_status_string() :
-        \ ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-        \ ('' != fname ? fname : '[No Name]') .
-        \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+        \ ('' != fname ? fname : '[No Name]')
 endfunction
 
 function! LightLineMode()
