@@ -48,6 +48,9 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
     "vim-endwise
     NeoBundle 'tpope/vim-endwise.git'
 
+    "tmuxline.vim
+    NeoBundle 'edkolev/tmuxline.vim'
+
     call neobundle#end()
   endif
 
