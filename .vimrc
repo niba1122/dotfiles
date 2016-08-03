@@ -148,12 +148,12 @@ let g:lightline = {
       \ }
 
 function! LightLineFilename()
-  let fname = substitute(expand('%:p'), expand('$HOME'), '~', 'g')
+  let fname = substitute(expand('%:p'), '^'.expand('$HOME'), '~', 'g')
   return fname == 'ControlP' && has_key(g:lightline, 'ctrlp_item') ? g:lightline.ctrlp_item :
         \ fname == '__Tagbar__' ? g:lightline.fname :
         \ fname =~ '__Gundo\|NERD_tree' ? '' :
         \ &ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \ &ft == 'unite' ? substitute(unite#get_status_string(), expand('$HOME'), '~', 'g') :
+        \ &ft == 'unite' ? substitute(unite#get_status_string(), '^'.expand('$HOME'), '~', 'g') :
         \ &ft == 'vimshell' ? vimshell#get_status_string() :
         \ ('' != fname ? fname : '[No Name]')
 endfunction
