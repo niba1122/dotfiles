@@ -153,7 +153,7 @@ function! LightLineFilename()
         \ fname == '__Tagbar__' ? g:lightline.fname :
         \ fname =~ '__Gundo\|NERD_tree' ? '' :
         \ &ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \ &ft == 'unite' ? substitute(unite#get_status_string(), '^'.expand('~'), '~', 'g') :
+        \ &ft == 'unite' ? substitute(unite#get_status_string(), '\%(\[.*\)\@<='.expand('~'), '~', 'g') :
         \ &ft == 'vimshell' ? vimshell#get_status_string() :
         \ ('' != fname ? fname : '[No Name]')
 endfunction
