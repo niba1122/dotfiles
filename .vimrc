@@ -222,6 +222,10 @@ set encoding=UTF-8
 set list
 set lcs=tab:>-,extends:\
 
+"バックアップ/スワップを無効
+set nobackup
+set noswapfile
+
 highlight WhitespaceEOL ctermbg=blue guibg=blue
 match WhitespaceEOL /\s\+$/
 autocmd WinEnter * match WhitespaceEOL /\s\+$/
