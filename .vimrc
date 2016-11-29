@@ -276,6 +276,8 @@ nnoremap <silent> [unite]f :<C-U>UniteWithBufferDir<Space>-buffer-name=files<Spa
 nnoremap <silent> [unite]b :<C-U>Unite<Space>buffer<CR>
 nnoremap <silent> [unite]r :<C-U>Unite<Space>history/yank<CR>
 nnoremap <silent> [unite]m :<C-U>Unite<Space>file_mru<CR>
+nnoremap <silent> [unite]g :<C-U>Unite<Space>grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> [unite]gr :<C-U>UniteResume search-buffer<CR>
 
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
