@@ -51,6 +51,9 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
     "tmuxline.vim
     NeoBundle 'edkolev/tmuxline.vim'
 
+    "yajs.vim
+    NeoBundle 'othree/yajs.vim'
+
     call neobundle#end()
   endif
 
@@ -58,6 +61,9 @@ endif
 
 "EXモードを使わない
 nnoremap Q <nop>
+
+"shift+k無効
+nnoremap K <nop>
 
 "コマンドラインモードでデフォルトでコマンドラインウィンドウを使うようにする
 nnoremap : q:
