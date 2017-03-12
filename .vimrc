@@ -54,6 +54,9 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
     "yajs.vim
     NeoBundle 'othree/yajs.vim'
 
+    "vim-jsx
+    NeoBundle 'mxw/vim-jsx'
+
     call neobundle#end()
   endif
 
