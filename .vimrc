@@ -190,6 +190,7 @@ colorscheme jellybeans
 "\              'attr': 'bold' },
 "\}
 "let g:jellybeans_use_lowcolor_black = 0
+let g:jellybeans_background_color_256='NONE'
 
 "検索をファイルの先頭へループしない
 set nowrapscan
