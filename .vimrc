@@ -41,6 +41,8 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
 
     "vim-slim
     NeoBundle 'slim-template/vim-slim'
+    "doctype htmlがある場合にハイライトされない問題への対応 https://github.com/slim-template/vim-slim/issues/38
+    autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 
     "vim-coffee-script
     NeoBundle 'kchmck/vim-coffee-script'
