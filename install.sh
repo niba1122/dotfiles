@@ -7,6 +7,7 @@ ln -nfs $DOTFILES_PATH/.zshrc $HOME/.zshrc
 ln -nfs $DOTFILES_PATH/.vimrc $HOME/.vimrc
 ln -nfs $DOTFILES_PATH/.vim/ $HOME/.vim
 ln -nfs $DOTFILES_PATH/.tmux.conf $HOME/.tmux.conf
+ln -nfs $DOTFILES_PATH/.hammerspoon/ $HOME/.hammerspoon
 
 if [ -e $HOME/dotfiles ]; then
   mv $HOME/dotfiles $HOME/.dotfiles
