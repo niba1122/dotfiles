@@ -357,3 +357,6 @@ endfunction
 
 "ESCでハイライト除去
 nnoremap <ESC><ESC> :<C-u>nohlsearch<CR><ESC>
+
+"vue.js component
+autocmd BufNewFile,BufRead *.vue setlocal filetype=html
