@@ -24,8 +24,3 @@ vim -c 'call dein#install()' -c q
 cd $DOTFILES_PATH/.vim/bundle/vimproc
 make
 cd $DOTFILES_PATH
-
-if [ -e /Applications/Karabiner.app/ ]; then
-  /Applications/Karabiner.app/Contents/Library/bin/karabiner be_careful_to_use__clear_all_values_by_name 'Default Profile'
-  sh ./karabiner/keybind.sh
-fi
