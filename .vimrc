@@ -1,65 +1,61 @@
 "NeoBundle
 if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
-  if has('vim_starting')
+  if &compatible
     set nocompatible
-    set runtimepath+=~/.dotfiles/.vim/bundle/neobundle.vim
-    call neobundle#begin(expand('~/.dotfiles/.vim/bundle/'))
-    NeoBundleFetch 'Shougo/neobundle.vim'
+  endif
+  set runtimepath+=~/.dotfiles/.vim/bundle/repos/github.com/Shougo/dein.vim
 
-    "NERDTree
-    "NeoBundle 'scrooloose/nerdtree'
-    "autocmd vimenter * nested if @% == '' && s:GetBufByte() == 0 | NERDTree | endif
-    "nnoremap <Space>n :NERDTree<Enter>
+  if dein#load_state('~/.dotfiles/.vim/bundle/')
+    call dein#begin('~/.dotfiles/.vim/bundle/')
+
+    call dein#add('~/.dotfiles/.vim/bundle/repos/github.com/Shougo/dein.vim')
 
     "unite.vim
-    NeoBundle 'Shougo/unite.vim'
+    call dein#add('Shougo/unite.vim')
 
     "neoyank
-    NeoBundle 'Shougo/neoyank.vim'
+    call dein#add('Shougo/neoyank.vim')
 
     "neomru
-    NeoBundle 'Shougo/neomru.vim'
+    call dein#add('Shougo/neomru.vim')
 
     "vimproc
-    NeoBundle 'Shougo/vimproc'
+    call dein#add('Shougo/vimproc')
 
     "VimFiler
-    NeoBundle 'Shougo/vimfiler.vim'
-
-    "NERDTree以外のバッファがなくなったときにNERDTreeを閉じる
-    "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-    "let NERDTreeShowLineNumbers=1
+    call dein#add('Shougo/vimfiler.vim')
 
     "lightline.vim
-    NeoBundle 'itchyny/lightline.vim'
+    call dein#add('itchyny/lightline.vim')
 
     "vim-quickrun
-    NeoBundle 'thinca/vim-quickrun'
+    call dein#add('thinca/vim-quickrun')
 
     "vim-elixir
-    NeoBundle 'elixir-lang/vim-elixir'
+    call dein#add('elixir-lang/vim-elixir')
 
     "vim-slim
-    NeoBundle 'slim-template/vim-slim'
+    call dein#add('slim-template/vim-slim')
     "doctype htmlがある場合にハイライトされない問題への対応 https://github.com/slim-template/vim-slim/issues/38
     autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 
     "vim-coffee-script
-    NeoBundle 'kchmck/vim-coffee-script'
+    call dein#add('kchmck/vim-coffee-script')
 
     "vim-endwise
-    NeoBundle 'tpope/vim-endwise.git'
+    call dein#add('tpope/vim-endwise.git')
 
     "tmuxline.vim
-    NeoBundle 'edkolev/tmuxline.vim'
+    call dein#add('edkolev/tmuxline.vim')
 
     "yajs.vim
-    NeoBundle 'othree/yajs.vim'
+    call dein#add('othree/yajs.vim')
 
     "vim-jsx
-    NeoBundle 'mxw/vim-jsx'
+    call dein#add('mxw/vim-jsx')
 
-    call neobundle#end()
+    call dein#end()
+    call dein#save_state()
   endif
 
 endif
