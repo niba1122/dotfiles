@@ -1,5 +1,10 @@
-bundle/*
-!bundle/neobundle.vim
-!bundle/NeoBundle.lock
+/bundle/*
+!/bundle/repos
+/bundle/repos/*
+!/bundle/repos/github.com
+/bundle/repos/github.com/*
+!/bundle/repos/github.com/Shougo
+/bundle/repos/github.com/Shougo/*
+!/bundle/repos/github.com/Shougo/dein.vim
 .netrwhist
 
