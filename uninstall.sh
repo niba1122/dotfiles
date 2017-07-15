@@ -8,6 +8,7 @@ rm $HOME/.vimrc
 rm $HOME/.vim
 rm $HOME/.tmux.conf
 rm $HOME/.hammerspoon
+rm $HOME/.config/nvim
 
 cd $HOME
 rm -rf .dotfiles
