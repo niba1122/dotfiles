@@ -25,6 +25,9 @@ git submodule init
 git submodule update
 
 vim -c 'call dein#install()' -c q
+if type nvim > /dev/null 2>&1; then
+  nvim -c 'call dein#install()' -c q
+fi
 
 cd $DOTFILES_PATH/.vim/bundle/vimproc
 make
