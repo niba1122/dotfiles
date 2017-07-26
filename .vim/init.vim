@@ -54,6 +54,9 @@ if isdirectory(expand('~/.dotfiles/.vim/bundle/'))
     "vim-jsx
     call dein#add('mxw/vim-jsx')
 
+    "typescript-vim
+    call dein#add('leafgarland/typescript-vim')
+
     call dein#end()
     call dein#save_state()
   endif
