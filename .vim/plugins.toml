@@ -52,3 +52,10 @@ repo = 'cespare/vim-toml'
 
 [[plugins]]
 repo = 'rust-lang/rust.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+if = "has('nvim')"
+hook_add = '''
+  let g:deoplete#enable_at_startup = 1
+'''
