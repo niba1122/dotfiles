@@ -49,3 +49,6 @@ repo = 'leafgarland/typescript-vim'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
