@@ -1,0 +1,51 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'elixir-lang/vim-elixir'
+
+[[plugins]]
+repo = 'slim-template/vim-slim'
+hook_ad = '''
+  # "doctype htmlがある場合にハイライトされない問題への対応 https://github.com/slim-template/vim-slim/issues/38
+  autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
+'''
+
+[[plugins]]
+repo = 'tpope/vim-endwise.git'
+
+[[plugins]]
+repo = 'edkolev/tmuxline.vim'
+
+[[plugins]]
+repo = 'othree/yajs.vim'
+
+[[plugins]]
+repo = 'mxw/vim-jsx'
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
