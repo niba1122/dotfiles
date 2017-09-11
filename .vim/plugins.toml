@@ -27,8 +27,8 @@ repo = 'elixir-lang/vim-elixir'
 
 [[plugins]]
 repo = 'slim-template/vim-slim'
-hook_ad = '''
-  # "doctype htmlがある場合にハイライトされない問題への対応 https://github.com/slim-template/vim-slim/issues/38
+hook_add = '''
+  "doctype htmlがある場合にハイライトされない問題への対応 https://github.com/slim-template/vim-slim/issues/38
   autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 '''
 
