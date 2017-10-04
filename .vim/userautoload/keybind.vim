@@ -106,6 +106,11 @@ nnoremap <Space>J <C-W>J
 nnoremap <Space>K <C-W>K
 nnoremap <Space>L <C-W>L
 
+"terminalモード
+if has('nvim')
+  tnoremap <silent> <ESC> <C-\><C-n>
+endif
+
 function! CmdwinPrevious()
   if col('.') == 1 || (col('.') == 2 && getline('.')[0] == '/')
     call feedkeys("\<ESC>k^i",'n')
