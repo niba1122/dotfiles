@@ -7,12 +7,12 @@ ln -nfs $DOTFILES_PATH/.zshrc $HOME/.zshrc
 ln -nfs $DOTFILES_PATH/.vimrc $HOME/.vimrc
 ln -nfs $DOTFILES_PATH/.vim/ $HOME/.vim
 ln -nfs $DOTFILES_PATH/.tmux.conf $HOME/.tmux.conf
-ln -nfs $DOTFILES_PATH/.hammerspoon/ $HOME/.hammerspoon
 
 if [ ! -e $HOME/.config ]; then
   mkdir ~/.config
 fi
 ln -nfs $DOTFILES_PATH/.vim $HOME/.config/nvim
+ln -nfs $DOTFILES_PATH/karabiner $HOME/.config/karabiner
 
 if [ -e $HOME/dotfiles ]; then
   mv $HOME/dotfiles $HOME/.dotfiles
