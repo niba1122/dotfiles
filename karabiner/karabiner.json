@@ -127,7 +127,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.google\\.android\\.studio$",
                                             "^com\\.apple\\.dt\\.Xcode$",
-                                            "^com\\.jetbrains\\.rubymine"
+                                            "^com\\.jetbrains"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -193,7 +193,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.google\\.android\\.studio$",
                                             "^com\\.apple\\.dt\\.Xcode$",
-                                            "^com\\.jetbrains\\.rubymine"
+                                            "^com\\.jetbrains"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -262,7 +262,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.google\\.android\\.studio$",
                                             "^com\\.apple\\.dt\\.Xcode$",
-                                            "^com\\.jetbrains\\.rubymine"
+                                            "^com\\.jetbrains"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -331,7 +331,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.google\\.android\\.studio$",
                                             "^com\\.apple\\.dt\\.Xcode$",
-                                            "^com\\.jetbrains\\.rubymine"
+                                            "^com\\.jetbrains"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -404,7 +404,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.google\\.android\\.studio$",
                                             "^com\\.apple\\.dt\\.Xcode$",
-                                            "^com\\.jetbrains\\.rubymine"
+                                            "^com\\.jetbrains"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -470,7 +470,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.google\\.android\\.studio$",
                                             "^com\\.apple\\.dt\\.Xcode$",
-                                            "^com\\.jetbrains\\.rubymine"
+                                            "^com\\.jetbrains"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -536,7 +536,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.google\\.android\\.studio$",
                                             "^com\\.apple\\.dt\\.Xcode$",
-                                            "^com\\.jetbrains\\.rubymine"
+                                            "^com\\.jetbrains"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -678,7 +678,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.google\\.android\\.studio$",
                                             "^com\\.apple\\.dt\\.Xcode$",
-                                            "^com\\.jetbrains\\.rubymine"
+                                            "^com\\.jetbrains"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -745,7 +745,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.google\\.android\\.studio$",
                                             "^com\\.apple\\.dt\\.Xcode$",
-                                            "^com\\.jetbrains\\.rubymine"
+                                            "^com\\.jetbrains"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -812,7 +812,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.google\\.android\\.studio$",
                                             "^com\\.apple\\.dt\\.Xcode$",
-                                            "^com\\.jetbrains\\.rubymine"
+                                            "^com\\.jetbrains"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -879,7 +879,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.google\\.android\\.studio$",
                                             "^com\\.apple\\.dt\\.Xcode$",
-                                            "^com\\.jetbrains\\.rubymine"
+                                            "^com\\.jetbrains"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -946,7 +946,7 @@
                                             "^com\\.microsoft\\.VSCode$",
                                             "^com\\.google\\.android\\.studio$",
                                             "^com\\.apple\\.dt\\.Xcode$",
-                                            "^com\\.jetbrains\\.rubymine"
+                                            "^com\\.jetbrains"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
