@@ -1,19 +1,5 @@
 alias tmux="env TERM=screen-256color-bce tmux"
 
-# カーソルキーを無効にする
-#do-nothing() {
-#}
-#zle -N do-nothing
-#bindkey '^[OA' do-nothing
-#bindkey '^[OB' do-nothing
-#bindkey '^[OC' do-nothing
-#bindkey '^[OD' do-nothing
-#
-#bindkey -M menuselect '^[OA' do-nothing
-#bindkey -M menuselect '^[OB' do-nothing
-#bindkey -M menuselect '^[OC' do-nothing
-#bindkey -M menuselect '^[OD' do-nothing
-
 alias ga='git add'
 alias gaa='git add -A'
 alias gb='git branch'
