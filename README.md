@@ -1,10 +1,11 @@
-# Installation
+# Install
 
-1. `git clone https://github.com/niba1122/dotfiles` at home directory
-2. cd `dotfiles`
-3. execute `. ./install.sh` in dotfiles
+1. `git clone https://github.com/niba1122/dotfiles` at `~`
+2. `mv dotfiles .dotfiles`
+3. execute `sh ./install.sh` at `~/.dotfiles`
 4. install powerline-fonts using `powerline-fonts.zip` in `.dotfiles/fonts/`
 5. Set Regular Font `Meslo LG S Regular for Powerline` in iTerm
 
-# Uninstallation
-execute `. ./uninstall.sh` in .dotfiles
+# Uninstall
+1. execute `sh ./uninstall.sh` at `~/.dotfiles`
+2. `rm ~/.dotfiles` at `~`

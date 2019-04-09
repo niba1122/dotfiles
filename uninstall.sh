@@ -1,6 +1,6 @@
-#! /bin/bash
+#! /bin/sh
 
-DOTFILES_PATH=$HOME'/.dotfiles'
+DOTFILES_PATH=$(pwd)
 
 rm $HOME/.oh-my-zsh
 rm $HOME/.zshrc
@@ -10,5 +10,3 @@ rm $HOME/.tmux.conf
 rm $HOME/.config/nvim
 rm $HOME/.config/karabiner
 
-cd $HOME
-rm -rf .dotfiles

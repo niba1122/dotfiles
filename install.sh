@@ -1,6 +1,6 @@
-#! /bin/bash
+#! /bin/sh
 
-DOTFILES_PATH=$HOME'/.dotfiles'
+DOTFILES_PATH=$(pwd)
 
 ln -nfs $DOTFILES_PATH/.oh-my-zsh/ $HOME/.oh-my-zsh
 ln -nfs $DOTFILES_PATH/.zshrc $HOME/.zshrc
@@ -14,13 +14,6 @@ fi
 ln -nfs $DOTFILES_PATH/.vim $HOME/.config/nvim
 ln -nfs $DOTFILES_PATH/karabiner $HOME/.config/karabiner
 
-if [ -e $HOME/dotfiles ]; then
-  mv $HOME/dotfiles $HOME/.dotfiles
-fi
-
-cd $HOME
-cd $DOTFILES_PATH
-
 git submodule init
 git submodule update
 
@@ -29,6 +22,3 @@ if type nvim > /dev/null 2>&1; then
   nvim -c 'call dein#install()' -c q
 fi
 
-cd $DOTFILES_PATH/.vim/bundle/vimproc
-make
-cd $DOTFILES_PATH
