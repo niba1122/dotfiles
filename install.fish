@@ -7,8 +7,6 @@ if [ ! -e $XDG_CONFIG_HOME ]
   mkdir ~/.config
 end
 
-#ln -nfs $DOTFILES_PATH/.oh-my-zsh/ $HOME/.oh-my-zsh
-#ln -nfs $DOTFILES_PATH/.zshrc $HOME/.zshrc
 ln -nfs $DOTFILES_PATH/vim/init.vim $HOME/.vimrc
 ln -nfs $DOTFILES_PATH/vim/ $HOME/.vim
 ln -nfs $DOTFILES_PATH/tmux.conf $HOME/.tmux.conf
