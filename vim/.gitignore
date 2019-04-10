@@ -1,0 +1,10 @@
+/bundles/*
+!/bundles/repos
+/bundles/repos/*
+!/bundles/repos/github.com
+/bundles/repos/github.com/*
+!/bundles/repos/github.com/Shougo
+/bundles/repos/github.com/Shougo/*
+!/bundles/repos/github.com/Shougo/dein.vim
+.netrwhist
+
