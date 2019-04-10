@@ -1,4 +1,4 @@
-#! /usr/local/bin/fish
+#! /usr/bin/env fish
 
 set DOTFILES_PATH (pwd)
 set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config

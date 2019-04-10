@@ -1,7 +1,7 @@
 if &compatible
   set nocompatible
 endif
-set runtimepath+=/Users/niba/.dotfiles/vim/bundles/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.dotfiles/vim/bundles/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.dotfiles/vim/bundles/')
   call dein#begin('~/.dotfiles/vim/bundles/')
