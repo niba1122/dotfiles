@@ -21,4 +21,5 @@ alias gss='git stash'
 alias gssl='git stash list'
 alias gssp='git stash pop'
 alias gst='git status'
+alias gbdm='gb --merged | xargs git branch -D'
 
