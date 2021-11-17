@@ -23,7 +23,7 @@ if not functions -q fisher
     curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
 end
 
-fish -c "fisher install $DOTFILES_PATH/fish"
+fish -c "fisher install (cat ~/.config/fish/fishfile)"
 
 vim -c 'call dein#install()' -c q
 if type nvim > /dev/null 2>&1
