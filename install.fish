@@ -22,7 +22,8 @@ git submodule update
 if not functions -q fisher
     curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
 end
-fish -c fisher
+
+fish -c "fisher install $DOTFILES_PATH/fish"
 
 vim -c 'call dein#install()' -c q
 if type nvim > /dev/null 2>&1
