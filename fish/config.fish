@@ -22,4 +22,5 @@ alias gssl='git stash list'
 alias gssp='git stash pop'
 alias gst='git status'
 alias gbdm='gb --merged | xargs git branch -D'
+alias gchm='sh -c \'DEFAULT_BRANCH=$(git remote show origin | sed -n "/HEAD branch/s/.*: //p"); git fetch || true; git branch -D "$DEFAULT_BRANCH" || true; git checkout "$DEFAULT_BRANCH";\''
 
